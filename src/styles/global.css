@@ -2983,3 +2983,134 @@ a {
     min-height: 44px;
   }
 }
+/* =========================================
+   CONTACT — SIDE BY SIDE CARDS
+   ========================================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.contact-content,
+.contact-form-wrapper {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+
+.contact-content {
+  padding: 42px;
+}
+
+.contact-form-wrapper {
+  padding: 42px;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  background: var(--surface-light);
+}
+
+.contact-link-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.contact-link strong {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.contact-field label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-submit {
+  margin-top: 4px;
+  width: 100%;
+}
+
+.contact-success {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-success .mono {
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+.contact-success h3 {
+  margin: 18px 0 10px;
+  font-size: 1.7rem;
+}
+
+.contact-success p {
+  color: var(--text-muted);
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .contact-content,
+  .contact-form-wrapper {
+    padding: 26px;
+  }
+}
