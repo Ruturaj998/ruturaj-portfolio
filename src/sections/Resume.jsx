@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 
 function Resume() {
+  const resumeUrl = '/ruturaj-portfolio/Ruturaj_Padhy_Resume.pdf'
+
   return (
     <section className="resume" id="resume">
       <div className="container">
@@ -137,8 +139,11 @@ function Resume() {
                 duration: 0.55,
               }}
             >
+              {/* View Resume */}
               <motion.a
-                href="#"
+                href={resumeUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="resume-btn resume-btn-primary"
                 whileHover={{
                   y: -3,
@@ -152,6 +157,7 @@ function Resume() {
                 }}
               >
                 VIEW RESUME
+
                 <motion.span
                   whileHover={{
                     x: 4,
@@ -165,8 +171,10 @@ function Resume() {
                 </motion.span>
               </motion.a>
 
+              {/* Download Resume */}
               <motion.a
-                href="#"
+                href={resumeUrl}
+                download="Ruturaj_Padhy_Resume.pdf"
                 className="resume-btn resume-btn-secondary"
                 whileHover={{
                   y: -3,
@@ -180,6 +188,7 @@ function Resume() {
                 }}
               >
                 DOWNLOAD PDF
+
                 <motion.span
                   whileHover={{
                     y: 3,
@@ -337,4 +346,3 @@ function Resume() {
 }
 
 export default Resume
-

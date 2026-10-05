@@ -241,30 +241,92 @@ function WebIcon() {
   )
 }
 
+function CreativeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect
+        x="3"
+        y="5"
+        width="18"
+        height="14"
+        rx="2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <path
+        d="m10 9 5 3-5 3V9Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+function CameraIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M5 7h3l1.3-2h5.4L16 7h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <circle
+        cx="12"
+        cy="13"
+        r="3.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+    </svg>
+  )
+}
+
+function BrainIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M9.5 4.5A3 3 0 0 0 6 7.3 3.2 3.2 0 0 0 4 10.2a3.2 3.2 0 0 0 2 3 3.2 3.2 0 0 0 2.7 4.8 3.1 3.1 0 0 0 2.8-2 3.1 3.1 0 0 0 2.8 2 3.2 3.2 0 0 0 2.7-4.8 3.2 3.2 0 0 0 2-3 3.2 3.2 0 0 0-2-2.9 3 3 0 0 0-3.5-2.8A3 3 0 0 0 9.5 4.5Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M12 6v12M8 9.5h2M14 9.5h2M8.5 14h2.5M13 14h2.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}
+
 const categories = [
   {
-    name: 'LANGUAGES',
+    name: 'SOFTWARE',
     items: [
       { name: 'Python', icon: <PythonIcon /> },
       { name: 'C', icon: <CIcon /> },
       { name: 'JavaScript', icon: <JavaScriptIcon /> },
-    ],
-  },
-  {
-    name: 'DATA',
-    items: [
-      { name: 'Pandas', icon: <DataIcon /> },
-      { name: 'Plotly', icon: <PlotlyIcon /> },
-      { name: 'MySQL', icon: <DatabaseIcon /> },
-    ],
-  },
-  {
-    name: 'WEB',
-    items: [
       { name: 'HTML5', icon: <HtmlIcon /> },
       { name: 'CSS3', icon: <CssIcon /> },
       { name: 'React', icon: <ReactIcon /> },
       { name: 'Node.js', icon: <NodeIcon /> },
+    ],
+  },
+  {
+    name: 'DATA & AI',
+    items: [
+      { name: 'Data Science', icon: <DataIcon /> },
+      { name: 'Data Analytics', icon: <DataIcon /> },
+      { name: 'Pandas', icon: <DataIcon /> },
+      { name: 'Plotly', icon: <PlotlyIcon /> },
+      { name: 'MySQL', icon: <DatabaseIcon /> },
+      { name: 'PostgreSQL', icon: <DatabaseIcon /> },
+      { name: 'Generative AI', icon: <BrainIcon /> },
+      { name: 'Prompt Engineering', icon: <BrainIcon /> },
     ],
   },
   {
@@ -273,6 +335,19 @@ const categories = [
       { name: 'Git', icon: <GitIcon /> },
       { name: 'GitHub', icon: <GithubIcon /> },
       { name: 'VS Code', icon: <WebIcon /> },
+      { name: 'DSA', icon: <DataIcon /> },
+    ],
+  },
+  {
+    name: 'CREATIVE',
+    items: [
+      { name: 'Video Editing', icon: <CreativeIcon /> },
+      { name: 'Documentary / Long-form', icon: <CreativeIcon /> },
+      { name: 'Reels', icon: <CreativeIcon /> },
+      { name: 'Storytelling', icon: <CreativeIcon /> },
+      { name: 'Cinematic Shooting', icon: <CameraIcon /> },
+      { name: 'Photography', icon: <CameraIcon /> },
+      { name: 'CapCut', icon: <CreativeIcon /> },
     ],
   },
 ]
@@ -333,8 +408,9 @@ function TechStack() {
           </h2>
 
           <p>
-            The technologies I use to learn, experiment,
-            build projects, and turn ideas into working systems.
+            The technologies and creative tools I use to learn,
+            experiment, build projects, create content, and turn
+            ideas into working systems.
           </p>
         </motion.div>
 
@@ -457,4 +533,3 @@ function TechStack() {
 }
 
 export default TechStack
-
