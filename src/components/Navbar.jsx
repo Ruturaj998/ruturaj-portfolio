@@ -1,7 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { Moon, Sun } from 'lucide-react'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isLightMode, setIsLightMode] = useState(() => {
+    return localStorage.getItem('theme') === 'light'
+  })
+
+  useEffect(() => {
+    if (isLightMode) {
+      document.documentElement.setAttribute('data-theme', 'light')
+    } else {
+      document.documentElement.removeAttribute('data-theme')
+    }
+  }, [isLightMode])
+
+  const toggleTheme = () => {
+    if (isLightMode) {
+      document.documentElement.removeAttribute('data-theme')
+      localStorage.setItem('theme', 'dark')
+      setIsLightMode(false)
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light')
+      localStorage.setItem('theme', 'light')
+      setIsLightMode(true)
+    }
+  }
 
   const navLinks = [
     { name: 'About', href: '#about' },
@@ -32,8 +56,18 @@ function Navbar() {
             </a>
           ))}
 
-          {/* Social Icons */}
+          {/* Social Icons & Theme Toggle */}
           <div className="navbar-socials">
+
+            {/* Theme Toggle */}
+            <button
+              type="button"
+              className="theme-toggle-btn"
+              onClick={toggleTheme}
+              aria-label={isLightMode ? "Switch to Dark Mode" : "Switch to Light Mode"}
+            >
+              {isLightMode ? <Moon size={18} /> : <Sun size={18} />}
+            </button>
 
             {/* GitHub */}
             <a
