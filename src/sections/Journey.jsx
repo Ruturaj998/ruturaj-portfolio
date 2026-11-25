@@ -129,11 +129,9 @@ function Journey() {
                 className="journey-index mono"
                 initial={{
                   opacity: 0,
-                  x: -15,
                 }}
                 whileInView={{
                   opacity: 1,
-                  x: 0,
                 }}
                 viewport={{
                   once: true,
@@ -151,11 +149,9 @@ function Journey() {
                 className="journey-year mono"
                 initial={{
                   opacity: 0,
-                  x: -20,
                 }}
                 whileInView={{
                   opacity: 1,
-                  x: 0,
                 }}
                 viewport={{
                   once: true,
@@ -173,11 +169,9 @@ function Journey() {
                 className="journey-content"
                 initial={{
                   opacity: 0,
-                  x: 20,
                 }}
                 whileInView={{
                   opacity: 1,
-                  x: 0,
                 }}
                 viewport={{
                   once: true,

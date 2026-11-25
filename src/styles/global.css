@@ -2527,7 +2527,7 @@ img {
   position: relative;
 
   display: grid;
-  grid-template-columns: 60px 110px 1fr auto;
+  grid-template-columns: 60px 110px minmax(0, 1fr) auto;
   gap: 30px;
   align-items: center;
 
@@ -2544,8 +2544,8 @@ img {
 .journey-item::before {
   content: "";
   position: absolute;
-  left: -20px;
-  right: -20px;
+  left: 0;
+  right: 0;
   top: 0;
   bottom: 0;
 
@@ -2628,7 +2628,7 @@ img {
   }
 
   .journey-item {
-    grid-template-columns: 50px 90px 1fr;
+    grid-template-columns: 50px 90px minmax(0, 1fr);
     gap: 20px;
   }
 
@@ -2644,7 +2644,7 @@ img {
   }
 
   .journey-item {
-    grid-template-columns: 35px 1fr;
+    grid-template-columns: 35px minmax(0, 1fr);
     gap: 10px 18px;
     padding: 24px 0;
   }

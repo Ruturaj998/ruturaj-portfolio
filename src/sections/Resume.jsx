@@ -39,11 +39,11 @@ function Resume() {
             className="resume-main"
             initial={{
               opacity: 0,
-              x: -35,
+              y: 20,
             }}
             whileInView={{
               opacity: 1,
-              x: 0,
+              y: 0,
             }}
             viewport={{
               once: true,
@@ -209,11 +209,11 @@ function Resume() {
             className="resume-info"
             initial={{
               opacity: 0,
-              x: 35,
+              y: 20,
             }}
             whileInView={{
               opacity: 1,
-              x: 0,
+              y: 0,
             }}
             viewport={{
               once: true,
