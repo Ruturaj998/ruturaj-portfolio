@@ -51,7 +51,12 @@ function Services() {
     <section className="capabilities" id="services" aria-labelledby="services-title">
       <div className="container">
         <div className="section-heading">
-          <h2 className="section-number mono" id="services-title">Services</h2>
+          <span className="section-number mono">FULL-STACK DEVELOPMENT</span>
+        </div>
+
+        <div className="project-intro">
+          <h2 id="services-title">What I can <span>build for you.</span></h2>
+          <p>Websites and applications for selling online, managing operations, and serving customers.</p>
         </div>
 
         <div className="capabilities-grid">
