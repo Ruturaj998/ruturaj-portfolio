@@ -352,6 +352,82 @@ const categories = [
   },
 ]
 
+const serviceCategories = [
+  {
+    name: 'FRONTEND & UI',
+    items: [
+      { name: 'Next.js', icon: <WebIcon /> },
+      { name: 'TypeScript', icon: <WebIcon /> },
+      { name: 'Tailwind CSS', icon: <WebIcon /> },
+      { name: 'FullCalendar', icon: <WebIcon /> },
+      { name: 'dnd-kit', icon: <WebIcon /> },
+      { name: 'Recharts', icon: <WebIcon /> },
+    ],
+  },
+  {
+    name: 'BACKEND & AUTH',
+    items: [
+      { name: 'Next.js Route Handlers', icon: <WebIcon /> },
+      { name: 'Express', icon: <WebIcon /> },
+      { name: 'Django', icon: <WebIcon /> },
+      { name: 'Django REST Framework', icon: <WebIcon /> },
+      { name: 'Django Auth', icon: <WebIcon /> },
+      { name: 'Django REST Framework permissions', icon: <WebIcon /> },
+      { name: 'Auth.js', icon: <WebIcon /> },
+      { name: 'Socket.IO', icon: <WebIcon /> },
+      { name: 'Payload CMS', icon: <WebIcon /> },
+    ],
+  },
+  {
+    name: 'DATABASES, SEARCH & JOBS',
+    items: [
+      { name: 'Prisma', icon: <DatabaseIcon /> },
+      { name: 'Django ORM', icon: <DatabaseIcon /> },
+      { name: 'Meilisearch', icon: <DatabaseIcon /> },
+      { name: 'Redis', icon: <DatabaseIcon /> },
+      { name: 'BullMQ', icon: <DatabaseIcon /> },
+      { name: 'Celery', icon: <DatabaseIcon /> },
+    ],
+  },
+  {
+    name: 'PAYMENTS, SHIPPING & EMAIL',
+    items: [
+      { name: 'Razorpay', icon: <WebIcon /> },
+      { name: 'Shiprocket', icon: <WebIcon /> },
+      { name: 'Resend', icon: <WebIcon /> },
+      { name: 'Nodemailer', icon: <WebIcon /> },
+      { name: 'Django Email', icon: <WebIcon /> },
+      { name: 'Amazon SES', icon: <WebIcon /> },
+    ],
+  },
+  {
+    name: 'FILES, REPORTS & TICKETS',
+    items: [
+      { name: 'Cloudinary', icon: <DataIcon /> },
+      { name: 'Amazon S3', icon: <DataIcon /> },
+      { name: 'WeasyPrint', icon: <DataIcon /> },
+      { name: 'openpyxl', icon: <DataIcon /> },
+      { name: 'PDFKit', icon: <DataIcon /> },
+      { name: 'ExcelJS', icon: <DataIcon /> },
+      { name: 'qrcode', icon: <DataIcon /> },
+      { name: 'ZXing', icon: <DataIcon /> },
+    ],
+  },
+  {
+    name: 'TESTING, DEPLOYMENT & MONITORING',
+    items: [
+      { name: 'Vitest', icon: <WebIcon /> },
+      { name: 'Playwright', icon: <WebIcon /> },
+      { name: 'pytest', icon: <WebIcon /> },
+      { name: 'Docker', icon: <WebIcon /> },
+      { name: 'Vercel', icon: <WebIcon /> },
+      { name: 'GitHub Actions', icon: <WebIcon /> },
+      { name: 'GA4', icon: <WebIcon /> },
+      { name: 'Sentry', icon: <WebIcon /> },
+    ],
+  },
+]
+
 function TechStack() {
   return (
     <section className="tech-stack" id="stack">
@@ -408,16 +484,15 @@ function TechStack() {
           </h2>
 
           <p>
-            The technologies and creative tools I use to learn,
-            experiment, build projects, create content, and turn
-            ideas into working systems.
+            Tools I use for software, data, and creative work, plus the
+            expected technologies for my full-stack services.
           </p>
         </motion.div>
 
         {/* Tech Categories */}
         <div className="tech-stack-grid">
 
-          {categories.map((category, categoryIndex) => (
+          {[...categories, ...serviceCategories].map((category, categoryIndex) => (
             <motion.div
               className="tech-category"
               key={category.name}
@@ -435,7 +510,7 @@ function TechStack() {
               }}
               transition={{
                 duration: 0.65,
-                delay: categoryIndex * 0.12,
+                delay: (categoryIndex % 4) * 0.12,
                 ease: [0.22, 1, 0.36, 1],
               }}
               whileHover={{
@@ -461,10 +536,11 @@ function TechStack() {
                   once: true,
                 }}
                 transition={{
-                  delay: 0.15 + categoryIndex * 0.12,
+                  delay: 0.15 + (categoryIndex % 4) * 0.12,
                   duration: 0.4,
                 }}
               >
+                {categoryIndex >= categories.length && 'EXPECTED STACK / '}
                 {category.name}
               </motion.span>
 
@@ -491,7 +567,7 @@ function TechStack() {
                       duration: 0.4,
                       delay:
                         0.25 +
-                        categoryIndex * 0.12 +
+                        (categoryIndex % 4) * 0.12 +
                         itemIndex * 0.08,
                     }}
                     whileHover={{
