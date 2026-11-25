@@ -181,6 +181,27 @@ function ProjectLab() {
         'Connecting application components',
       ],
     },
+    {
+      number: '03',
+      title: 'ERP SOFTWARE',
+      category: 'BUSINESS SOFTWARE',
+      description:
+        'I build ERP software that brings records and day-to-day workflows into one application.',
+    },
+    {
+      number: '04',
+      title: 'E-COMMERCE WEBSITES',
+      category: 'WEB DEVELOPMENT',
+      description:
+        'I build online storefronts that make it easy for shoppers to browse products and find what they need.',
+    },
+    {
+      number: '05',
+      title: 'PERSONAL BLOG',
+      category: 'WEB DEVELOPMENT',
+      description:
+        'I built a personal blog to share my writing, project notes, and what I’m learning.',
+    },
   ]
 
   const toggleCaseStudy = (number) => {
@@ -224,8 +245,7 @@ function ProjectLab() {
           </h2>
 
           <p>
-            A collection of experiments, applications, and data-driven
-            projects built while learning and exploring new technologies.
+            Selected work across software, web development, and data analytics.
           </p>
         </motion.div>
 
@@ -289,17 +309,19 @@ function ProjectLab() {
                       {project.title}
                     </motion.h3>
 
-                    <motion.span
-                      className="project-arrow"
-                      animate={{
-                        rotate: isOpen ? 45 : 0,
-                      }}
-                      transition={{
-                        duration: 0.25,
-                      }}
-                    >
-                      ↗
-                    </motion.span>
+                    {project.technologies && (
+                      <motion.span
+                        className="project-arrow"
+                        animate={{
+                          rotate: isOpen ? 45 : 0,
+                        }}
+                        transition={{
+                          duration: 0.25,
+                        }}
+                      >
+                        ↗
+                      </motion.span>
+                    )}
                   </div>
 
                   <p className="project-description">
@@ -308,74 +330,76 @@ function ProjectLab() {
 
                 </div>
 
-                {/* Project Bottom */}
-                <div className="project-bottom">
+                {project.technologies && (
+                  {/* Project Bottom */}
+                  <div className="project-bottom">
 
-                  <div className="project-tech">
-                    <span className="tech-label mono">
-                      TECH STACK
-                    </span>
+                    <div className="project-tech">
+                      <span className="tech-label mono">
+                        TECH STACK
+                      </span>
 
-                    <div className="tech-list">
+                      <div className="tech-list">
 
-                      {project.technologies.map((tech, techIndex) => (
-                        <motion.div
-                          className="tech-item"
-                          key={tech.name}
-                          initial={{
-                            opacity: 0,
-                            x: -8,
-                          }}
-                          whileInView={{
-                            opacity: 1,
-                            x: 0,
-                          }}
-                          viewport={{
-                            once: true,
-                            amount: 0.15,
-                          }}
-                          transition={{
-                            duration: 0.4,
-                            delay:
-                              0.25 +
-                              index * 0.15 +
-                              techIndex * 0.07,
-                          }}
-                          whileHover={{
-                            y: -3,
-                          }}
-                        >
-                          <span className="tech-icon">
-                            {tech.icon}
-                          </span>
+                        {project.technologies.map((tech, techIndex) => (
+                          <motion.div
+                            className="tech-item"
+                            key={tech.name}
+                            initial={{
+                              opacity: 0,
+                              x: -8,
+                            }}
+                            whileInView={{
+                              opacity: 1,
+                              x: 0,
+                            }}
+                            viewport={{
+                              once: true,
+                              amount: 0.15,
+                            }}
+                            transition={{
+                              duration: 0.4,
+                              delay:
+                                0.25 +
+                                index * 0.15 +
+                                techIndex * 0.07,
+                            }}
+                            whileHover={{
+                              y: -3,
+                            }}
+                          >
+                            <span className="tech-icon">
+                              {tech.icon}
+                            </span>
 
-                          <span>{tech.name}</span>
-                        </motion.div>
-                      ))}
+                            <span>{tech.name}</span>
+                          </motion.div>
+                        ))}
 
+                      </div>
                     </div>
-                  </div>
 
-                  <motion.button
-                    className="project-link"
-                    onClick={() => toggleCaseStudy(project.number)}
-                    whileTap={{ scale: 0.97 }}
-                  >
-                    {isOpen ? 'CLOSE CASE STUDY' : 'VIEW CASE STUDY'}
-
-                    <motion.span
-                      animate={{
-                        rotate: isOpen ? 90 : 0,
-                      }}
-                      transition={{
-                        duration: 0.25,
-                      }}
+                    <motion.button
+                      className="project-link"
+                      onClick={() => toggleCaseStudy(project.number)}
+                      whileTap={{ scale: 0.97 }}
                     >
-                      {isOpen ? '−' : '↗'}
-                    </motion.span>
-                  </motion.button>
+                      {isOpen ? 'CLOSE CASE STUDY' : 'VIEW CASE STUDY'}
 
-                </div>
+                      <motion.span
+                        animate={{
+                          rotate: isOpen ? 90 : 0,
+                        }}
+                        transition={{
+                          duration: 0.25,
+                        }}
+                      >
+                        {isOpen ? '−' : '↗'}
+                      </motion.span>
+                    </motion.button>
+
+                  </div>
+                )}
 
                 {/* Animated Case Study */}
                 <AnimatePresence initial={false}>
