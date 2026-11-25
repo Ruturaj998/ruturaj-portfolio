@@ -3527,3 +3527,21 @@ a {
     padding: 26px;
   }
 }
+
+#services .service-stack {
+  margin-top: 24px;
+}
+
+#services .service-stack-heading {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#services .service-stack .capability-skills {
+  margin: 0;
+  padding: 0;
+}

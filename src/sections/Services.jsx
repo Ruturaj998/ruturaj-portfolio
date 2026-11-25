@@ -216,19 +216,23 @@ function Services() {
         </div>
 
         <div className="capabilities-grid">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <article className="capability-card capability-software" key={service.name}>
               <div className="capability-content">
                 <h3>{service.name}</h3>
                 <p>{service.description}</p>
               </div>
 
-              <p className="tech-label mono">EXPECTED TECH STACK</p>
-              <ul className="capability-skills" aria-label="Expected tech stack">
-                {service.techStack.map((technology) => (
-                  <li className="skill-item" key={technology}>{technology}</li>
-                ))}
-              </ul>
+              <div className="service-stack">
+                <h4 className="service-stack-heading mono" id={`service-stack-${index}`}>
+                  Expected Tech Stack
+                </h4>
+                <ul className="capability-skills" aria-labelledby={`service-stack-${index}`}>
+                  {service.techStack.map((technology) => (
+                    <li className="skill-item" key={technology}>{technology}</li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
         </div>
