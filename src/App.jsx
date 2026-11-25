@@ -2,7 +2,6 @@ import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
 import About from './sections/About'
 import Capabilities from './sections/Capabilities'
-import Services from './sections/Services'
 import ProjectLab from './sections/ProjectLab'
 import DataSection from './sections/DataSection'
 import Journey from './sections/Journey'
@@ -20,7 +19,6 @@ function App() {
         <Hero />
         <About />
         <Capabilities />
-        <Services />
         <ProjectLab />
         <DataSection />
         <Journey />

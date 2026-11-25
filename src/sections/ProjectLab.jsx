@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import Services from './Services'
 
 function PythonIcon() {
   return (
@@ -659,6 +660,7 @@ function ProjectLab() {
         </div>
 
       </div>
+      <Services />
     </section>
   )
 }
