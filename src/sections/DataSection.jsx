@@ -12,9 +12,9 @@ function DataSection() {
     },
     {
       label: 'PROJECTS',
-      value: '02',
+      value: '50+',
       description:
-        'Experiments and applications built while learning.',
+        'Projects across software, websites, and data analytics.',
     },
     {
       label: 'APPROACH',
