@@ -331,7 +331,6 @@ function ProjectLab() {
                 </div>
 
                 {project.technologies && (
-                  {/* Project Bottom */}
                   <div className="project-bottom">
 
                     <div className="project-tech">
