@@ -1,19 +1,19 @@
 const services = [
   {
     name: 'E-commerce Store',
-    description: 'A full-stack online store with product search, filters, a cart, and secure checkout. Customers can track shipments and receive order emails. The admin dashboard manages products, inventory, coupons, orders, and refunds.',
+    description: 'Sell online and manage products, inventory, coupons, orders, and refunds from one dashboard. Shoppers can find products, check out securely, receive order emails, and track shipments.',
     techStack: [
       'Next.js',
-      'React',
       'TypeScript',
+      'PostgreSQL',
+      'Razorpay',
+      'Shiprocket',
+      'React',
       'Tailwind CSS',
       'Next.js Route Handlers',
-      'PostgreSQL',
       'Prisma',
       'Auth.js',
-      'Razorpay',
       'Cloudinary',
-      'Shiprocket',
       'Resend',
       'Meilisearch',
       'Redis',
@@ -28,14 +28,15 @@ const services = [
   },
   {
     name: 'School ERP',
-    description: 'A school management system with role-based dashboards for administrators, teachers, and parents. It brings together student records, attendance, exams, report cards, and fees, with document uploads, online fee collection, and automated reminders.',
+    description: 'Manage student records, attendance, exams, report cards, and fees in one place. Administrators, teachers, and parents get role-based dashboards, with document uploads, online fee collection, and automated reminders.',
     techStack: [
       'React',
+      'Django',
+      'PostgreSQL',
+      'Django REST Framework',
+      'Razorpay',
       'TypeScript',
       'Tailwind CSS',
-      'Django',
-      'Django REST Framework',
-      'PostgreSQL',
       'Django ORM',
       'Django Auth',
       'Django REST Framework permissions',
@@ -46,7 +47,6 @@ const services = [
       'Amazon SES',
       'Celery',
       'Redis',
-      'Razorpay',
       'pytest',
       'Playwright',
       'Docker',
@@ -59,17 +59,17 @@ const services = [
     description: 'Customers can view available slots, book or reschedule an appointment, and receive email reminders. Staff can manage working hours, blocked dates, and bookings from a shared calendar.',
     techStack: [
       'React',
+      'Node.js',
+      'PostgreSQL',
+      'FullCalendar',
+      'Nodemailer',
       'TypeScript',
       'Tailwind CSS',
-      'Node.js',
       'Express',
-      'PostgreSQL',
       'Prisma',
       'Auth.js',
-      'FullCalendar',
       'Redis',
       'BullMQ',
-      'Nodemailer',
       'Vitest',
       'Playwright',
       'Docker',
@@ -81,15 +81,15 @@ const services = [
     description: 'Track stock by location, record purchases and sales, and flag items that need restocking. Staff can generate PDF invoices and export stock and sales reports for reconciliation.',
     techStack: [
       'React',
+      'Express',
+      'MySQL',
+      'PDFKit',
+      'ExcelJS',
       'TypeScript',
       'Tailwind CSS',
       'Node.js',
-      'Express',
-      'MySQL',
       'Prisma',
       'Auth.js',
-      'PDFKit',
-      'ExcelJS',
       'Recharts',
       'Vitest',
       'Playwright',
@@ -102,18 +102,18 @@ const services = [
     description: 'Capture leads from enquiry forms, assign owners, and move deals through a pipeline. Sales teams can set follow-up reminders, log conversations, and review conversion reports.',
     techStack: [
       'React',
+      'Express',
+      'PostgreSQL',
+      'Recharts',
+      'Resend',
       'TypeScript',
       'Tailwind CSS',
       'Node.js',
-      'Express',
-      'PostgreSQL',
       'Prisma',
       'Auth.js',
       'dnd-kit',
-      'Recharts',
       'Redis',
       'BullMQ',
-      'Resend',
       'Vitest',
       'Playwright',
       'Docker',
@@ -125,12 +125,12 @@ const services = [
     description: 'Publish a searchable blog with categories, tags, and author pages. Editors can save drafts, preview posts, and manage images. Public posts include metadata for search and sharing.',
     techStack: [
       'Next.js',
-      'React',
       'TypeScript',
-      'Tailwind CSS',
       'Payload CMS',
       'PostgreSQL',
       'Amazon S3',
+      'React',
+      'Tailwind CSS',
       'Vitest',
       'Playwright',
       'Docker',
@@ -142,15 +142,15 @@ const services = [
     description: 'Customers can browse a menu, customize items, and place pickup orders. A live kitchen dashboard shows new orders and lets staff mark them as preparing or ready for pickup.',
     techStack: [
       'React',
-      'TypeScript',
-      'Tailwind CSS',
       'Node.js',
-      'Express',
       'Socket.IO',
       'PostgreSQL',
+      'Razorpay',
+      'TypeScript',
+      'Tailwind CSS',
+      'Express',
       'Prisma',
       'Auth.js',
-      'Razorpay',
       'Vitest',
       'Playwright',
       'Docker',
@@ -162,15 +162,15 @@ const services = [
     description: 'Publish event details, manage seat limits, and email QR tickets to attendees. Organizers can scan tickets at the venue and export attendance reports.',
     techStack: [
       'Next.js',
-      'React',
-      'TypeScript',
-      'Tailwind CSS',
       'PostgreSQL',
-      'Prisma',
-      'Auth.js',
       'qrcode',
       'ZXing',
       'Nodemailer',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Prisma',
+      'Auth.js',
       'ExcelJS',
       'Vitest',
       'Playwright',
@@ -183,14 +183,14 @@ const services = [
     description: 'Clients can sign in to view milestones, download deliverables, and approve work. Teams can share files and send updates within a workspace that only the assigned client can access.',
     techStack: [
       'React',
-      'TypeScript',
-      'Tailwind CSS',
       'Django',
-      'Django REST Framework',
       'PostgreSQL',
-      'Django Auth',
       'Amazon S3',
       'Amazon SES',
+      'TypeScript',
+      'Tailwind CSS',
+      'Django REST Framework',
+      'Django Auth',
       'Celery',
       'Redis',
       'pytest',
@@ -228,10 +228,21 @@ function Services() {
                   Expected Tech Stack
                 </h4>
                 <ul className="capability-skills" aria-labelledby={`service-stack-${index}`}>
-                  {service.techStack.map((technology) => (
+                  {service.techStack.slice(0, 5).map((technology) => (
                     <li className="skill-item" key={technology}>{technology}</li>
                   ))}
                 </ul>
+                <details className="service-stack-details">
+                  <summary>
+                    <span className="stack-collapsed-label">View full stack</span>
+                    <span className="stack-expanded-label">Hide full stack</span>
+                  </summary>
+                  <ul className="capability-skills" aria-label="Additional expected tools">
+                    {service.techStack.slice(5).map((technology) => (
+                      <li className="skill-item" key={technology}>{technology}</li>
+                    ))}
+                  </ul>
+                </details>
               </div>
             </article>
           ))}

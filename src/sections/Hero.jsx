@@ -2,17 +2,6 @@ import { motion } from 'framer-motion'
 import { ArrowDownRight, ArrowRight } from 'lucide-react'
 
 export default function Hero() {
-  const scrollToWork = () => {
-    const element = document.getElementById('work')
-
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
-    }
-  }
-
   return (
     <section className="hero" id="home">
       {/* Background grid */}
@@ -64,14 +53,15 @@ export default function Hero() {
             </p>
 
             <div className="hero-actions">
-              <button
-                type="button"
-                className="hero-primary-btn"
-                onClick={scrollToWork}
-              >
-                <span>EXPLORE WORK</span>
+              <a href="#contact" className="hero-primary-btn">
+                <span>DISCUSS YOUR PROJECT</span>
                 <ArrowRight size={16} strokeWidth={2} />
-              </button>
+              </a>
+
+              <a href="#work" className="hero-secondary-btn">
+                <span>EXPLORE WORK</span>
+                <ArrowDownRight size={15} strokeWidth={2} />
+              </a>
 
               <a
                 href={`${import.meta.env.BASE_URL}Ruturaj_Padhy_Resume.pdf`}

@@ -510,6 +510,7 @@ img {
 
 .hero-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
@@ -3568,4 +3569,24 @@ a {
 
 #services .capability-content {
   margin-top: 0;
+}
+
+#services .service-stack-details {
+  margin-top: 14px;
+}
+
+#services .service-stack-details summary {
+  width: fit-content;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+#services .service-stack-details:not([open]) .stack-expanded-label,
+#services .service-stack-details[open] .stack-collapsed-label {
+  display: none;
+}
+
+#services .service-stack-details .capability-skills {
+  margin-top: 12px;
 }
