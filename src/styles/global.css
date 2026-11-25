@@ -345,6 +345,8 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: clamp(32px, 6vh, 72px);
+  padding-block: 112px 56px;
 }
 
 /* ---------- Background Grid ---------- */
@@ -372,8 +374,7 @@ img {
 /* ---------- Name ---------- */
 
 .hero-name-layer {
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: 1;
 
   display: flex;
@@ -415,8 +416,7 @@ img {
 /* ---------- Main Content ---------- */
 
 .hero-content-layer {
-  position: absolute;
-  inset: auto 0 0;
+  position: relative;
 
   z-index: 3;
 
@@ -502,8 +502,7 @@ img {
 
   color: var(--text-muted);
 
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 0.95rem;
 }
 
 /* ---------- Actions ---------- */
@@ -650,7 +649,6 @@ img {
   }
 
   .hero-kicker {
-    font-size: 9px;
     line-height: 1.5;
   }
 

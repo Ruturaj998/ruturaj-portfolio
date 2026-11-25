@@ -49,7 +49,7 @@ export default function Hero() {
             </h2>
 
             <p className="hero-kicker">
-              I build e-commerce stores, school management systems, and custom web apps.
+              I build full-stack web apps.
             </p>
 
             <div className="hero-actions">
