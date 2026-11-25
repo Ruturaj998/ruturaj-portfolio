@@ -121,7 +121,7 @@ function WebIcon() {
   )
 }
 
-function ProjectLab() {
+function ProjectLab({ onEnquire }) {
   const [openProject, setOpenProject] = useState(null)
 
   const projects = [
@@ -640,7 +640,7 @@ function ProjectLab() {
         </div>
 
       </div>
-      <Services />
+      <Services onEnquire={onEnquire} />
     </section>
   )
 }

@@ -202,7 +202,7 @@ const services = [
   },
 ]
 
-function Services() {
+function Services({ onEnquire }) {
   return (
     <section className="capabilities" id="services" aria-labelledby="services-title">
       <div className="container">
@@ -244,6 +244,15 @@ function Services() {
                   </ul>
                 </details>
               </div>
+
+              <a
+                className="service-enquiry"
+                href="#contact-form"
+                onClick={() => onEnquire(service.name)}
+                aria-label={`Enquire about ${service.name}`}
+              >
+                Enquire about this <span aria-hidden="true">↗</span>
+              </a>
             </article>
           ))}
         </div>

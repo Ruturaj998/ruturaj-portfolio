@@ -84,7 +84,7 @@ function TelegramIcon() {
   )
 }
 
-function Contact() {
+function Contact({ subject, onSubjectChange }) {
   const [state, handleSubmit] = useForm('mzebkrkz')
 
   const socialLinks = [
@@ -195,6 +195,7 @@ function Contact() {
           {/* RIGHT CARD */}
           <motion.div
             className="contact-form-wrapper"
+            id="contact-form"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -278,6 +279,8 @@ function Contact() {
                     id="subject"
                     type="text"
                     name="subject"
+                    value={subject}
+                    onChange={(event) => onSubjectChange(event.target.value)}
                     placeholder="What is this about?"
                     required
                   />
