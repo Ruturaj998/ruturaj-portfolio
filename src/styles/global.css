@@ -228,6 +228,22 @@ img {
   border-left: 1px solid var(--border);
 }
 
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar-controls button {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.navbar-controls button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .navbar-socials a,
 .theme-toggle-btn {
   display: flex;
@@ -264,7 +280,7 @@ img {
 
 /* Mobile */
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   .navbar-container {
     height: 68px;
   }
@@ -3544,4 +3560,12 @@ a {
 #services .service-stack .capability-skills {
   margin: 0;
   padding: 0;
+}
+
+#services .capability-card {
+  min-height: 0;
+}
+
+#services .capability-content {
+  margin-top: 0;
 }

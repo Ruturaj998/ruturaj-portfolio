@@ -29,7 +29,7 @@ function Footer() {
         >
 
           <motion.a
-            href="#"
+            href="#home"
             className="footer-logo"
             whileHover={{
               y: -3,
@@ -101,7 +101,7 @@ function Footer() {
           </p>
 
           <motion.a
-            href="#"
+            href="#home"
             className="footer-back-top mono"
             whileHover={{
               y: -3,

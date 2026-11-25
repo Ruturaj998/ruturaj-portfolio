@@ -627,26 +627,6 @@ function ProjectLab() {
                         <span className="mono">
                           PROJECT / {project.number}
                         </span>
-
-                        <div className="case-actions">
-
-                          <motion.a
-                            href="#"
-                            className="case-action"
-                            whileHover={{ x: 4 }}
-                          >
-                            GITHUB ↗
-                          </motion.a>
-
-                          <motion.a
-                            href="#"
-                            className="case-action"
-                            whileHover={{ x: 4 }}
-                          >
-                            LIVE DEMO ↗
-                          </motion.a>
-
-                        </div>
                       </motion.div>
 
                     </motion.div>

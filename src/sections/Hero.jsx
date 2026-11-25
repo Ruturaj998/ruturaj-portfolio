@@ -74,7 +74,7 @@ export default function Hero() {
               </button>
 
               <a
-                href="/ruturaj-portfolio/Ruturaj_Padhy_Resume.pdf"
+                href={`${import.meta.env.BASE_URL}Ruturaj_Padhy_Resume.pdf`}
                 target="_blank"
                 rel="noreferrer"
                 className="hero-secondary-btn"

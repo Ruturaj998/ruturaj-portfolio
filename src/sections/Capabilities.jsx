@@ -291,10 +291,6 @@ function Capabilities() {
                 ))}
               </div>
 
-              <div className="capability-footer mono">
-                EXPLORE <span>↗</span>
-              </div>
-
             </motion.article>
           ))}
 
